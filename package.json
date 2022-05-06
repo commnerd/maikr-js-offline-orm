@@ -1,0 +1,31 @@
+{
+  "name": "maikr-js-offline-orm",
+  "version": "0.0.1",
+  "description": "An orm for saving things in the browser, as well as hooks to sync with an api",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/commnerd/maikr-js-offline-orm.git"
+  },
+  "keywords": [
+    "maikr",
+    "offline",
+    "indexeddb",
+    "orm",
+    "js",
+    "javascript",
+    "typescript"
+  ],
+  "author": "Michael J. Miller",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/commnerd/maikr-js-offline-orm/issues"
+  },
+  "homepage": "https://github.com/commnerd/maikr-js-offline-orm#readme",
+  "dependencies": {
+    "localforage": "^1.10.0"
+  }
+}
