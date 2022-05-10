@@ -1,24 +1,17 @@
-abstract class Model {
-
-    protected primaryKey: string = "id";
-
-    private modelFields: Array<string> = ['initValues', 'primaryKey', 'values'];
-
-    private initValues: Object = {};
-
+class ControlClass {
+    target: any;
     constructor() {
-        for(let key in this.getClassKeys()) {
-            // this.initValues[key] = this[key];
+        for(let prop in this.target) {
+            (this as unknown as typeof this.target)[prop] = this.target[prop];
         }
+    }
+}
+
+export function Model(target: any) {
+    let cls = typeof target;
+    let retVal = class cls extends ControlClass {
+        prototype = target.prototype;
     }
 
-    private getClassKeys(): Array<string> {
-        let saveKeys = [];
-        for(let key in this) {
-            if(this.hasOwnProperty(key) && key !in this.modelFields) {
-                saveKeys.push(key);
-            }
-        }
-        return saveKeys;
-    }
+    return retVal as typeof target;
 }
